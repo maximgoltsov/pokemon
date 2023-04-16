@@ -2,11 +2,9 @@ FROM node:14
 
 WORKDIR /
 
-COPY package*.json ./
-RUN yarn
-
 COPY . .
-RUN yarn build
+
+RUN yarn install --pure-lockfile && yarn build && rm -rf node_modules
 
 RUN npm install -g serve
 EXPOSE 5000
