@@ -28,7 +28,7 @@ const RootPage = () => {
           count={count}
           page={page}
           rowsPerPage={limit}
-          onPageChange={(event, nextPage) => setPage(nextPage)}
+          onPageChange={(_, nextPage) => setPage(nextPage)}
           onRowsPerPageChange={(event) => setLimit(+event.target.value)}  />
       </Grid>
       <PokemonDetailsFeature />
